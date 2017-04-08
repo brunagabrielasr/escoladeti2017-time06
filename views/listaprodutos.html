@@ -11,7 +11,7 @@
     <form action="" method="post" class="form-inline" role="form">
         <div class="form-group col-md-12">
             <label class="sr-only" for="">label</label>
-            <input type="email" class="form-control" name="" id="" placeholder="Buscar Produto">
+            <input type="text" class="form-control" ng-model="search" name="" id="" placeholder="Buscar Produto">
         </div>
     </form>
 </div>
@@ -32,11 +32,14 @@
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="p in produtos">
+        <tr ng-repeat="p in produtos | filter:search">
             <td>{{p.codigo}}</td>
             <td>{{p.nome}}</td>
             <td>{{p.preco}}</td>
-            <td></td>
+            <td>
+                <button class="btn btn-warning" ng-click="editar($index)">Editar</button>
+                <button class="btn btn-danger" ng-click="excluir(p)">Excluir</button>
+            </td>
         </tr>
         </tbody>
     </table>

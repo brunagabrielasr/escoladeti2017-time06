@@ -10,6 +10,10 @@ app.config(function ($routeProvider) {
             templateUrl: 'views/listaprodutos.html',
             controller: 'produtoController',
             controllerAs: 'produtoController'
+        }).when('/produto/:id', {
+            templateUrl: 'views/novoproduto.html',
+            controller: 'produtoController',
+            controllerAs: 'produtoController'
         }).when('/novoproduto', {
             templateUrl: 'views/novoproduto.html',
             controller: 'produtoController',
